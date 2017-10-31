@@ -1,0 +1,23 @@
+image: node:8
+
+variables:
+  NODE_ENV: gitlab-ci
+
+mobile_music:
+  script:
+    - cd mobile_music
+    - yarn --frozen-lockfile
+    - yarn lint
+    - yarn build
+web_music:
+  script:
+    - cd web_music
+    - yarn --frozen-lockfile
+    - yarn lint
+    - yarn build
+
+server_api:
+  script:
+    - cd server_api
+    - yarn --frozen-lockfile
+    - yarn test
