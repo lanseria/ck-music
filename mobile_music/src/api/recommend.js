@@ -1,6 +1,6 @@
 // import axios from 'axios'
 import jsonp from '@/common/js/jsonp'
-import { commonParams, options } from './config'
+import { commonParams, options, baseUrl } from './config'
 /**
  * g_tk:5381
  * uin:0
@@ -40,7 +40,7 @@ export function getRecommend () {
  * ein:29
  */
 export function getDiscList () {
-  const url = 'https://qqmusicapi.limonplayer.cn/api/getDiscList'
+  const url = baseUrl + '/api/getDiscList'
   const data = Object.assign({}, commonParams, {
     platform: 'yqq',
     sin: 0,
@@ -72,7 +72,7 @@ export function getDiscList () {
  * needNewCode:0
  */
 export function getSongList (dissid) {
-  const url = 'https://qqmusicapi.limonplayer.cn/api/getDiscSongs'
+  const url = baseUrl + '/api/getDiscSongs'
   const data = Object.assign({}, commonParams, {
     platform: 'yqq',
     json: 1,

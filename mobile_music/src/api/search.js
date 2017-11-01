@@ -1,6 +1,6 @@
 // import axios from 'axios'
 import jsonp from '@/common/js/jsonp'
-import { commonParams, options } from './config'
+import { commonParams, options, baseUrl } from './config'
 
 /**
  * g_tk:5381
@@ -50,7 +50,7 @@ export function getHotKey () {
  * @param {*} zhida  是否需要歌手信息
  */
 export function search (query, page, zhida, perpage) {
-  const url = 'https://qqmusicapi.limonplayer.cn/api/search'
+  const url = baseUrl + '/api/search'
 
   const data = Object.assign({}, commonParams, {
     platform: 'h5',

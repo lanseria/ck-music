@@ -1,9 +1,9 @@
 // import axios from 'axios'
 import jsonp from '@/common/js/jsonp'
-import { commonParams, options } from './config'
+import { commonParams, options, baseUrl } from './config'
 
 export function getLyric (mid) {
-  const url = 'https://qqmusicapi.limonplayer.cn/api/lyric'
+  const url = baseUrl + '/api/lyric'
   const data = Object.assign({}, commonParams, {
     songmid: mid,
     pcachetime: +new Date(),

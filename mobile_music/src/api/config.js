@@ -10,4 +10,6 @@ export const options = {
   param: 'jsonpCallback'
 }
 
+export const baseUrl = 'https://qqmusicapi.limonplayer.cn'
+
 export const ERR_OK = 0

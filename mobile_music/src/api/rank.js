@@ -1,6 +1,6 @@
 // import axios from 'axios'
 import jsonp from '@/common/js/jsonp'
-import { commonParams, options } from './config'
+import { commonParams, options, baseUrl } from './config'
 
 /**
  * g_tk:5381
@@ -15,7 +15,7 @@ import { commonParams, options } from './config'
  */
 
 export function getTopList (mid) {
-  const url = 'https://qqmusicapi.limonplayer.cn/api/getTopList'
+  const url = baseUrl + '/api/getTopList'
   const data = Object.assign({}, commonParams, {
     platform: 'h5',
     uin: 0,
