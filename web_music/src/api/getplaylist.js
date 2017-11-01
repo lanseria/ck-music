@@ -1,5 +1,5 @@
 import jsonp from 'common/js/jsonp'
-import { commonParams, options } from './config'
+import { commonParams, options, baseUrl } from './config'
 /* eslint-disable no-unused-vars */
 import jsondata from './data_params.json'
 
@@ -20,7 +20,7 @@ data:{"comm":{"ct":24},"playlist":{"method":"get_playlist_by_category","param":{
 
 export function getPlaylist (reqData) {
   let reqdata = reqData === undefined ? jsondata : reqData
-  const url = 'https://qqmusicapi.limonplayer.cn/api/getPlaylist'
+  const url = baseUrl + '/api/getPlaylist'
   const data = Object.assign({}, commonParams, {
     needNewCode: 0,
     platform: 'yqq',

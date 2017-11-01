@@ -10,4 +10,6 @@ export const options = {
   param: 'jsonpCallback'
 }
 
+export const baseUrl = process.env.NODE_ENV === 'development' ? 'http://localhost:7992' : 'https://qqmusicapi.limonplayer.cn'
+
 export const ERR_OK = 0
