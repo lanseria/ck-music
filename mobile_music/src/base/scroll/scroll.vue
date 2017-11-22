@@ -78,7 +78,6 @@ export default {
     },
     refresh () {
       this.scroll && this.scroll.refresh()
-      // console.log(this.scroll.maxScrollY)
     },
     scrollTo () {
       this.scroll && this.scroll.scrollTo.apply(this.scroll, arguments)
@@ -96,6 +95,3 @@ export default {
   }
 }
 </script>
-<style lang="stylus" scoped>
-
-</style>
