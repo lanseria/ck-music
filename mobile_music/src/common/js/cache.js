@@ -90,4 +90,3 @@ function deleteFromArray (arr, compare) {
     arr.splice(index, 1)
   }
 }
-

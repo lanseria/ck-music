@@ -121,4 +121,3 @@ function findIndex (list, song) {
     return item.id === song.id
   })
 }
-
