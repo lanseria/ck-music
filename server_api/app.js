@@ -128,5 +128,5 @@ app.use('/api', apiRouters)
 module.exports = app
 
 app.listen(port, function() {
-  console.log(`app is listening at port ${port}`)
+  console.log(`app is listening at port ${port}\nQQ音乐API转发服务已开启`)
 })
