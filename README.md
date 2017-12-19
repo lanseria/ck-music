@@ -1,6 +1,7 @@
 # CK-MUSIC
 
-> Music player catch qq music api [QQMusic & QQMusic h5](https://y.qq.com) 效果页: [QQ-Music-Demo](http://qqmusic.limonplayer.cn/#/recommend)
+> Music player catch qq music api [QQMusic & QQMusic h5](https://y.qq.com) 效果页: [QQ-Mobile-Music-Demo](http://qqmusic.limonplayer.cn/#/recommend)
+[QQ-PC-Music-Demo](http://qqmusic1.limonplayer.cn)
 
 ## 简介
 
