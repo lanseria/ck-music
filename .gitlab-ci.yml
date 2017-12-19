@@ -9,9 +9,9 @@ mobile_music:
     - yarn --frozen-lockfile
     - yarn lint
     - yarn build
-web_music:
+pc_music:
   script:
-    - cd web_music
+    - cd pc_music
     - yarn --frozen-lockfile
     - yarn lint
     - yarn build
