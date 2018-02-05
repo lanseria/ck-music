@@ -18,7 +18,7 @@ jobs:
 
     steps:
       - checkout
-
+      - run: cd mobile_music
       # Download and cache dependencies
       - restore_cache:
           keys:
