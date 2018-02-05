@@ -20,9 +20,6 @@ jobs:
       - checkout
       - run: cd mobile_music
       # Download and cache dependencies
-      - restore_cache:
-          keys:
-          - v1-dependencies-{{ checksum "package.json" }}
 
       - run: yarn install
 
