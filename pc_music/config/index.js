@@ -1,9 +1,10 @@
 'use strict'
-// Template version: 1.2.7
+// Template version: 1.2.5
 // see http://vuejs-templates.github.io/webpack for documentation.
 
 const path = require('path')
-const agent = new require('https').Agent({
+const https = require('https')
+const agent = new https.Agent({
   keepAlive: true
 })
 
@@ -14,7 +15,7 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/api': {
-        target: 'https://qqmusicapi.limonplayer.cn',
+        target: 'https://music.limonplayer.cn',
         agent,
         changeOrigin: true,
         ws: true
@@ -23,7 +24,7 @@ module.exports = {
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
-    port: 7991, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
+    port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
     autoOpenBrowser: false,
     errorOverlay: true,
     notifyOnErrors: true,
@@ -54,7 +55,7 @@ module.exports = {
     // (https://github.com/webpack/css-loader#sourcemaps)
     // In our experience, they generally work as expected,
     // just be aware of this issue when enabling this option.
-    cssSourceMap: false,
+    cssSourceMap: false
   },
 
   build: {

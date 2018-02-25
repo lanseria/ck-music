@@ -1,5 +1,5 @@
 export const commonParams = {
-  g_tk: 182355749,
+  g_tk: 5381,
   inCharset: 'utf8',
   outCharset: 'utf-8',
   notice: 0,
@@ -9,7 +9,6 @@ export const commonParams = {
 export const options = {
   param: 'jsonpCallback'
 }
-
-export const baseUrl = process.env.NODE_ENV === 'development' ? 'http://localhost:7992' : 'https://qqmusicapi.limonplayer.cn'
+export const baseUrl = process.env.NODE_ENV === 'development' ? 'http://localhost:7992' : 'http://music.limonplayer.cn'
 
 export const ERR_OK = 0
