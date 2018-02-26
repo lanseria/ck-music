@@ -7,9 +7,9 @@ addons:
   ssh_known_hosts: 115.159.27.203
 
 before_install:
-  - openssl aes-256-cbc -K $encrypted_2daa33aa331c_key -iv $encrypted_2daa33aa331c_iv -in tx_rsa.enc -out ~/.ssh/tx_rsa -d
-  - chmod 600 ~/.ssh/tx_rsa
-  - cat ~/.ssh/tx_rsa
+  - openssl aes-256-cbc -K $encrypted_2daa33aa331c_key -iv $encrypted_2daa33aa331c_iv -in id_rsa.enc -out ~/.ssh/id_rsa -d
+  - chmod 600 ~/.ssh/id_rsa
+  - cat ~/.ssh/id_rsa
   - echo -e "Host 115.159.27.203\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 
 install: 
