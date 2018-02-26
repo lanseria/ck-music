@@ -2,7 +2,7 @@ language: node_js
 node_js:
 - 8.9.4
 after_success:
-- ssh root@115.159.27.203 -p yyy 'cd /var/www/node/ck-music && git fetch && git pull && cd mobile_music && yarn && yarn build'
+- ssh vhik@115.159.27.203 -p vhik564265135 'cd /var/www/node/ck-music && git fetch && git pull && cd mobile_music && yarn && yarn build'
 before_install:
 - openssl aes-256-cbc -K $encrypted_2daa33aa331c_key -iv $encrypted_2daa33aa331c_iv -in tx_rsa.enc -out ~/.ssh/tx_rsa -d
 - chmod 600 ~/.ssh/tx_rsa
