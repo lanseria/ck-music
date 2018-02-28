@@ -21,7 +21,7 @@ jobs:
         - echo -e "Host 115.159.27.203\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
         - pwd
       after_success:
-        - './deploy.sh'
+        - ssh root@115.159.27.203 "cd /var/www/node/ck-music && git fetch && git pull && cd mobile_music && yarn && yarn build && cd .. && cd pc_music && yarn && yarn build && cd .. && cd server_api && yarn && pm2 restart app.js && cd .. ; exit 0"
 
 notifications:
   email: false
