@@ -5,6 +5,7 @@ var request = supertest(app)
 
 describe('最初API转发接口测试', function () {
   it('/getDiscList接口测试', function (done) {
+    this.timeout(15000);
     request
     .get('/api/getDiscList')
     .query({
