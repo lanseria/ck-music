@@ -1,5 +1,7 @@
 # CK-MUSIC
-![](https://travis-ci.org/Lanseria/ck-music.svg?branch=master)
+[![travis_build](https://travis-ci.org/Lanseria/ck-music.svg?branch=master "travis_build")](https://travis-ci.org/Lanseria/ck-music)
+![]()
+
 > Music player catch qq music api [QQMusic & QQMusic h5](https://y.qq.com) 效果页: [QQ-Mobile-Music-Demo](http://qqmusic.limonplayer.cn/#/recommend)
 [QQ-PC-Music-Demo](http://qqmusic1.limonplayer.cn)
 
