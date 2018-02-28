@@ -15,7 +15,7 @@
               <a href="#" class="js-playlist" v-html="item.title"></a>
             </span>
           </h4>
-          <div class="playlist-other">{{`播放量${item.listen_num}`}}</div>
+          <div class="playlist-other">播放量：{{item.listen_num}}</div>
         </div>
       </li>
     </ul>

@@ -1,5 +1,5 @@
 <template>
-  <slide-box v-if="songList.length>0&&typeInfo.length>0" :data="songList" :menu="menu" :typeId="typeId">
+  <slide-box v-if="songList.length>0&&typeInfo.length>0" :data="songList" :menu="menu" :typeId="typeId" @selectList="selectList">
     
   </slide-box>
 </template>
@@ -39,7 +39,7 @@ export default {
   },
   methods: {
     _getMenuItem (id, name) {
-      let req = _.cloneDeep(reqData.req_data.new_song)
+      let req = _.cloneDeep(reqData.new_song)
       req.new_album.param.type = id
       return {
         name: name,

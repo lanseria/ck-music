@@ -1,7 +1,7 @@
 <template>
   <div>
     <recom-playlist v-if="recomPlaylist" :category="category" :recomPlaylist="recomPlaylist" ref="slideBox" @selectList="getRemList"></recom-playlist>
-    <new-songs-starting :songList="songList" :typeInfo="typeInfo" :typeId="parseInt(1)"></new-songs-starting>
+    <new-songs-starting v-if="songList.length>0" :songList="songList" :typeInfo="typeInfo" :typeId="parseInt(1)"></new-songs-starting>
   </div>
 </template>
 

@@ -58,7 +58,7 @@ export default {
 <style lang="stylus" scoped>
 @import "~common/stylus/variable"
 .slide-box
-  height 480px
+  height 532px;
   background linear-gradient(top, #4c4c4c, #222)
   .section-inner
     max-width 1200px
