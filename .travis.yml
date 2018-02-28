@@ -19,7 +19,7 @@ jobs:
         - echo -e "Host 115.159.27.203\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
         - pwd
       after_success:
-        - ssh root@115.159.27.203 'deploy.sh'
+        - './deploy.sh'
 
 notifications:
   email: false

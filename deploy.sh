@@ -1,2 +1,2 @@
 #!/bin/bash
-cd /var/www/node/ck-music && git fetch && git pull && cd mobile_music && yarn && yarn build && cd .. && cd pc_music && yarn && yarn build && cd .. && cd server_api && yarn && pm2 restart app.js && cd .. ; exit 0
+ssh root@115.159.27.203 "cd /var/www/node/ck-music && git fetch && git pull && cd mobile_music && yarn && yarn build && cd .. && cd pc_music && yarn && yarn build && cd .. && cd server_api && yarn && pm2 restart app.js && cd .. ; exit 0"
