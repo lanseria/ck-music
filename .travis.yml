@@ -3,9 +3,6 @@ language: node_js
 node_js:
 - 8.9.4
 
-addons:
-  ssh_known_hosts: 115.159.27.203
-
 jobs:
   include:
     - stage: before_install
