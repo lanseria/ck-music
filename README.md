@@ -2,10 +2,13 @@
 [![travis_build](https://travis-ci.org/Lanseria/ck-music.svg?branch=master "travis_build")](https://travis-ci.org/Lanseria/ck-music)
 ![]()
 
-> Music player catch qq music api [QQMusic & QQMusic h5](https://y.qq.com) 效果页: [QQ-Mobile-Music-Demo](http://qqmusic.limonplayer.cn/#/recommend)
-[QQ-PC-Music-Demo](http://qqmusic1.limonplayer.cn)
+> Music player catch qq music api [QQMusic & QQMusic h5](https://y.qq.com) 效果页: [QQ-PC-Mobile-Music-Demo](https://music.limonplayer.cn)
 
 ## 简介
+
+参考了黄轶老师的这门课
+
+进阶链接 https://coding.imooc.com/class/107.html
 
 ## tech stack
 
