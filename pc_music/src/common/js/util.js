@@ -1,9 +1,9 @@
 // http://p.qpic.cn/music_cover/0iachsNZmG84pY2Pf8Y8vE90lXrnjgYrSlCFCJsR9Cw4JHc4YFM5eMg/600?n=1
 export function delelteHttp (httpUrl) {
-  if (httpUrl.startWith('https')) {
+  if (httpUrl.startsWith('https')) {
     return httpUrl.slice(6, -1)
   }
-  if (httpUrl.startWith('http')) {
+  if (httpUrl.startsWith('http')) {
     return httpUrl.slice(5, -1)
   }
 }
