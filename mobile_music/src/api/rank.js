@@ -41,7 +41,7 @@ export function getTopList (mid) {
  * _:1506568032843
  * */
 export function getMusicList (topid) {
-  const url = 'https://c.y.qq.com/v8/fcg-bin/fcg_v8_toplist_cp.fcg'
+  const url = '//c.y.qq.com/v8/fcg-bin/fcg_v8_toplist_cp.fcg'
   const data = Object.assign({}, commonParams, {
     platform: 'h5',
     uin: 0,

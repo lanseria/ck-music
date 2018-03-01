@@ -20,7 +20,7 @@ export default {
   },
   methods: {
     linkto () {
-      window.location.href = 'https://github.com/Lanseria'
+      window.location.href = '//github.com/Lanseria'
     },
     redirect () {
       this.$refs.github.show()

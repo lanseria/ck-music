@@ -14,7 +14,7 @@ import { commonParams, options, baseUrl } from './config'
  * _:1506572164126
  */
 export function getHotKey () {
-  const url = 'https://c.y.qq.com/splcloud/fcgi-bin/gethotkey.fcg'
+  const url = '//c.y.qq.com/splcloud/fcgi-bin/gethotkey.fcg'
 
   const data = Object.assign({}, commonParams, {
     platform: 'h5',
