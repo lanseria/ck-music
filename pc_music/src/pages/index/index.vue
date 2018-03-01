@@ -13,11 +13,11 @@ import { ERR_OK } from '@/api/config'
 export default {
   data () {
     return {
-      musicOverview: {},
-      recomPlaylist: [],
-      category: {},
-      typeInfo: [],
-      songList: []
+      musicOverview: {}, // 首屏全部数据的加载
+      recomPlaylist: [], // 歌单推荐中的首屏（热门推荐的12首歌曲）
+      category: {}, // 歌单推荐中的菜单，group_name为热门推荐，下面为情歌等其它分类
+      typeInfo: [], // 新歌首发的菜单（不包含为你推荐），按国家分类，内地，日本，港台等等
+      songList: [] // 这里只包含内地的所有歌单
     }
   },
   created () {

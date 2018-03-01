@@ -1,0 +1,12 @@
+{
+  "comm": {
+    "ct": 24
+  },
+  "new_song": {
+    "module": "QQMusic.MusichallServer",
+    "method": "GetNewSong",
+    "param": {
+      "type": 2
+    }
+  }
+}

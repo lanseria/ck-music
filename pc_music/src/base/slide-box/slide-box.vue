@@ -95,7 +95,9 @@ export default {
     .mod-playlist
       margin-bottom 20px
 .mod-slide
+  height 350px
   overflow-x scroll
+  overflow-y hidden
   margin-bottom 20px
   font-size 0
 </style>
