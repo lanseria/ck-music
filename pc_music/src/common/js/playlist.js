@@ -1,3 +1,4 @@
+import { delelteHttp } from './util'
 export default class Playlist {
   constructor ({
     contentId,
@@ -8,7 +9,7 @@ export default class Playlist {
     username
   }) {
     this.content_id = contentId
-    this.cover = cover
+    this.cover = delelteHttp(cover)
     this.creator = creator
     this.listen_num = listenNum
     this.title = title

@@ -4,11 +4,11 @@
       <div class="song-list" v-if="newSongListOfArray.length>0" v-for="(musicList, index) in newSongListOfArray" :key="index">
         <div class="song-item" v-for="(song, ind) in musicList" :key="ind">
           <div class="cover">
-            <img v-lazy="`https://y.gtimg.cn/music/photo_new/T002R90x90M000${song.album.mid}.jpg?max_age=2592000`" :alt="song.album.name">
+            <img v-lazy="`//y.gtimg.cn/music/photo_new/T002R90x90M000${song.album.mid}.jpg?max_age=2592000`" :alt="song.album.name">
           </div>
           <div class="desc">
-            <div class="songname"><a :href="`https://y.qq.com/n/yqq/song/${song.mid}.html#stat=y_new.index.new_song.songname`">{{song.name}}</a></div>
-            <div class="singer"><a :href="`https://y.qq.com/n/yqq/singer/${song.singer[0].mid}.html#stat=y_new.index.new_song.singername`">{{song.singer[0].name}}</a></div>
+            <div class="songname"><a :href="`//y.qq.com/n/yqq/song/${song.mid}.html#stat=y_new.index.new_song.songname`">{{song.name}}</a></div>
+            <div class="singer"><a :href="`//y.qq.com/n/yqq/singer/${song.singer[0].mid}.html#stat=y_new.index.new_song.singername`">{{song.singer[0].name}}</a></div>
           </div>
           <div class="intervel">{{format(song.interval)}}</div>
         </div>

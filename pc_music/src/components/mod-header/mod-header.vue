@@ -32,7 +32,7 @@
       <div class="header-opt">
         <span class="mod-top-login">
           <a href="/" class="top-login-link">
-            <img class="top-login-cover" src="http://thirdqq.qlogo.cn/g?b=sdk&k=5TQjazYkt5NEw7sLHpPcyw&s=140&t=1496725348" alt="" srcset="">
+            <img class="top-login-cover" src="//thirdqq.qlogo.cn/g?b=sdk&k=5TQjazYkt5NEw7sLHpPcyw&s=140&t=1496725348" alt="" srcset="">
           </a>
           <a href="#" class="top-login-link"></a>
         </span>
