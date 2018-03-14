@@ -90,7 +90,7 @@
       </div>
     </transition>
     <play-list ref="playlist"></play-list>
-    <audio ref="audio" @play="ready" @error="error" @timeupdate="updateTime" @ended="end" :src="currentSong.url"></audio>
+    <audio ref="audio" @play="ready" @error="error" @timeupdate="updateTime" @ended="end" :src="currentSong.url" autoplay></audio>
   </div>
 </template>
 <script>
