@@ -1,5 +1,6 @@
-import jsonp from 'common/js/jsonp'
-import { commonParams, options, baseUrl } from './config'
+// import jsonp from 'common/js/jsonp'
+import axios from 'axios'
+import { commonParams } from './config'
 /* eslint-disable no-unused-vars */
 import jsondata from './data_params.json'
 
@@ -20,7 +21,7 @@ import jsondata from './data_params.json'
 
 export function getPlaylist (reqData) {
   let reqdata = reqData === undefined ? jsondata : reqData
-  const url = baseUrl + '/api/getPlaylist'
+  const url = '/api/getPlaylist'
   const data = {
     ...commonParams,
     needNewCode: 0,
@@ -28,5 +29,9 @@ export function getPlaylist (reqData) {
     hostUin: 0,
     data: JSON.stringify(reqdata)
   }
-  return jsonp(url, data, options)
+  return axios(url, {
+    params: data
+  }).then(res => {
+    return Promise.resolve(res.data)
+  })
 }

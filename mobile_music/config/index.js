@@ -15,8 +15,8 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/api': {
-        target: 'https://music.limonplayer.cn',
-        agent,
+        target: process.env.npm_config_localhost ? 'http://localhost:7992' : 'https://music.limonplayer.cn',
+        agent: process.env.npm_config_localhost ? undefined : agent,
         changeOrigin: true,
         ws: true
       }

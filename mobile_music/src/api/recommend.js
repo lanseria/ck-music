@@ -1,6 +1,6 @@
-// import axios from 'axios'
+import axios from 'axios'
 import jsonp from '@/common/js/jsonp'
-import { commonParams, options, baseUrl } from './config'
+import { commonParams, options } from './config'
 /**
  * g_tk:5381
  * uin:0
@@ -19,7 +19,6 @@ export function getRecommend () {
     uin: 0,
     needNewCode: 1
   })
-
   return jsonp(url, data, options)
 }
 /**
@@ -40,7 +39,7 @@ export function getRecommend () {
  * ein:29
  */
 export function getDiscList () {
-  const url = baseUrl + '/api/getDiscList'
+  const url = '/api/getDiscList'
   const data = Object.assign({}, commonParams, {
     platform: 'yqq',
     sin: 0,
@@ -51,7 +50,11 @@ export function getDiscList () {
     rnd: Math.random()
   })
 
-  return jsonp(url, data, options)
+  return axios(url, {
+    params: data
+  }).then(res => {
+    return Promise.resolve(res.data)
+  })
 }
 /**
  * type:1
@@ -72,7 +75,7 @@ export function getDiscList () {
  * needNewCode:0
  */
 export function getSongList (dissid) {
-  const url = baseUrl + '/api/getDiscSongs'
+  const url = '/api/getDiscSongs'
   const data = Object.assign({}, commonParams, {
     platform: 'yqq',
     json: 1,
@@ -88,5 +91,9 @@ export function getSongList (dissid) {
     type: 1
   })
 
-  return jsonp(url, data, options)
+  return axios(url, {
+    params: data
+  }).then(res => {
+    return Promise.resolve(res.data)
+  })
 }

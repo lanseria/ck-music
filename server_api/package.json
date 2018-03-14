@@ -10,8 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.16.2",
     "express": "^4.15.5",
+    "got": "^8.3.0",
     "supertest": "^3.0.0"
   },
   "devDependencies": {

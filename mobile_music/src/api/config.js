@@ -9,6 +9,5 @@ export const commonParams = {
 export const options = {
   param: 'jsonpCallback'
 }
-export const baseUrl = process.env.NODE_ENV === 'development' ? '//localhost:7992' : '//music.limonplayer.cn'
 
 export const ERR_OK = 0
