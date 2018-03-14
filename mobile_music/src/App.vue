@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <m-header></m-header>
-    <tab></tab>
+    <m-header class="sub-wrapper"></m-header>
+    <tab class="sub-wrapper"></tab>
     <keep-alive>
       <router-view></router-view>
     </keep-alive>
@@ -18,12 +18,19 @@ export default {
     MHeader,
     Tab,
     Player
+  },
+  mounted () {
+    document.addEventListener('touchmove', e => e.preventDefault(), {passive: false})
   }
 }
 </script>
 
 
 <style lang="stylus" scoped>
-
+#app 
+  -webkit-overflow-scrolling: touch;
+.sub-wrapper
+  height: 100%;
+  overflow: auto;
 </style>
 

@@ -90,7 +90,7 @@
       </div>
     </transition>
     <play-list ref="playlist"></play-list>
-    <audio ref="audio" @play="ready" @error="error" @timeupdate="updateTime" @ended="end" :src="currentSong.url" autoplay></audio>
+    <audio ref="audio" audio-play @canplay="songReady=true" @play="play" @error="error" @timeupdate="updateTime" @ended="end" :src="currentSong.url"></audio>
   </div>
 </template>
 <script>
@@ -155,6 +155,7 @@ export default {
     },
     open () {
       this.setFullScreen(true)
+      this.$refs.audio.load()
     },
     enter (el, done) {
       const { x, y, scale } = this._getPosAndScale()
@@ -240,8 +241,7 @@ export default {
       }
       this.songReady = false
     },
-    ready () {
-      this.songReady = true
+    play () {
       this.savePlayHistory(this.currentSong)
     },
     error () {
@@ -394,6 +394,14 @@ export default {
   },
   watch: {
     currentSong (newSong, oldSong) {
+      if (!oldSong.id) {
+        console.log('loading...')
+        this.$refs.audio.load()
+        this.$nextTick(() => {
+          this.getLyric()
+        })
+        return
+      }
       if (!newSong.id) {
         return
       }
@@ -407,6 +415,7 @@ export default {
         this.getLyric()
       })
       clearTimeout(this.timer)
+      console.log(newSong, oldSong)
       this.timer = setTimeout(() => {
         this.$refs.audio.play()
       }, 800)
