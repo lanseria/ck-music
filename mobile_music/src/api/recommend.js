@@ -1,6 +1,5 @@
-import axios from 'axios'
 import jsonp from '@/common/js/jsonp'
-import { commonParams, options } from './config'
+import { commonParams, options, baseUrl } from './config'
 /**
  * g_tk:5381
  * uin:0
@@ -13,7 +12,7 @@ import { commonParams, options } from './config'
  * _:1505987976490
  */
 export function getRecommend () {
-  const url = '//c.y.qq.com/musichall/fcgi-bin/fcg_yqqhomepagerecommend.fcg'
+  const url = baseUrl + '/getRecomList'
   const data = Object.assign({}, commonParams, {
     platform: 'h5',
     uin: 0,
@@ -37,9 +36,10 @@ export function getRecommend () {
  * sortId:5
  * sin:0
  * ein:29
+ * mobile 页首页加载推荐列表接口
  */
 export function getDiscList () {
-  const url = '/api/getDiscList'
+  const url = baseUrl + '/getDiscList'
   const data = Object.assign({}, commonParams, {
     platform: 'yqq',
     sin: 0,
@@ -49,12 +49,7 @@ export function getDiscList () {
     categoryId: 10000000,
     rnd: Math.random()
   })
-
-  return axios(url, {
-    params: data
-  }).then(res => {
-    return Promise.resolve(res.data)
-  })
+  return jsonp(url, data, options)
 }
 /**
  * type:1
@@ -75,7 +70,7 @@ export function getDiscList () {
  * needNewCode:0
  */
 export function getSongList (dissid) {
-  const url = '/api/getDiscSongs'
+  const url = baseUrl + '/getDiscSongs'
   const data = Object.assign({}, commonParams, {
     platform: 'yqq',
     json: 1,
@@ -90,10 +85,5 @@ export function getSongList (dissid) {
     needNewCode: 0,
     type: 1
   })
-
-  return axios(url, {
-    params: data
-  }).then(res => {
-    return Promise.resolve(res.data)
-  })
+  return jsonp(url, data, options)
 }

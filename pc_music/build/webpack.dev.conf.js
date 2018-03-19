@@ -67,7 +67,7 @@ module.exports = new Promise((resolve, reject) => {
       // Add FriendlyErrorsPlugin
       devWebpackConfig.plugins.push(new FriendlyErrorsPlugin({
         compilationSuccessInfo: {
-          messages: [`Your application is running here: http://${devWebpackConfig.devServer.host}:${port} By use proxy: ${config.dev.proxyTable['/api'].target}`]
+          messages: [`Your application is running here: http://${devWebpackConfig.devServer.host}:${port} By use jsonp proxy: http://localhost:7992`]
         },
         onErrors: config.dev.notifyOnErrors
         ? utils.createNotifierCallback()

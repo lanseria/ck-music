@@ -1,6 +1,5 @@
-import axios from 'axios'
 import jsonp from '@/common/js/jsonp'
-import { commonParams, options } from './config'
+import { commonParams, options, baseUrl } from './config'
 
 /**
  * g_tk:5381
@@ -15,7 +14,7 @@ import { commonParams, options } from './config'
  */
 
 export function getTopList (mid) {
-  const url = '/api/getTopList'
+  const url = baseUrl + '/getTopList'
   const data = Object.assign({}, commonParams, {
     platform: 'h5',
     uin: 0,
@@ -23,12 +22,7 @@ export function getTopList (mid) {
     needNewCode: 1,
     format: 'json'
   })
-  return axios(url, {
-    params: data
-  }).then(res => {
-    console.log(res.data)
-    return Promise.resolve(res.data)
-  })
+  return jsonp(url, data, options)
 }
 /**
  * g_tk:5381
@@ -46,7 +40,7 @@ export function getTopList (mid) {
  * _:1506568032843
  * */
 export function getMusicList (topid) {
-  const url = '//c.y.qq.com/v8/fcg-bin/fcg_v8_toplist_cp.fcg'
+  const url = baseUrl + '/getTopListSongs'
   const data = Object.assign({}, commonParams, {
     platform: 'h5',
     uin: 0,

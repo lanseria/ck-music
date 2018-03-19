@@ -10,4 +10,6 @@ export const options = {
   param: 'jsonpCallback'
 }
 
+export const baseUrl = process.env.NODE_ENV === 'development' ? '//localhost:7992' : '//api.limonplayer.cn/jsonp/music'
+
 export const ERR_OK = 0

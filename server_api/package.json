@@ -10,13 +10,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.15.5",
     "got": "^8.3.0",
+    "koa": "^2.5.0",
+    "koa-jsonp": "^2.0.2",
+    "koa-router": "^7.4.0",
     "supertest": "^3.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
-    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
     "chai": "^4.1.2",
     "mocha": "3.4.2",
     "mochawesome": "^2.3.1"

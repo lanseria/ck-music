@@ -3,24 +3,24 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
 
 const path = require('path')
-const https = require('https')
-const agent = new https.Agent({
-  keepAlive: true
-})
+// const https = require('https')
+// const agent = new https.Agent({
+//   keepAlive: true
+// })
 
 module.exports = {
   dev: {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {
-      '/api': {
-        target: process.env.npm_config_localhost ? 'http://localhost:7992' : 'https://music.limonplayer.cn',
-        agent: process.env.npm_config_localhost ? undefined : agent,
-        changeOrigin: true,
-        ws: true
-      }
-    },
+    // proxyTable: {
+    //   '/api': {
+    //     target: process.env.npm_config_localhost ? 'http://localhost:7992' : 'https://music.limonplayer.cn',
+    //     agent: process.env.npm_config_localhost ? undefined : agent,
+    //     changeOrigin: true,
+    //     ws: true
+    //   }
+    // },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
