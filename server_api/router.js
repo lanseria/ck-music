@@ -1,7 +1,8 @@
 const Router = require('koa-router')
+const prefix = require('../config')
 const pcController = require('./controller/pc')
 const mobileController = require('./controller/mobile')
-const router = new Router()
+const router = new Router({ prefix })
 /**
  * pc 页通用获取歌单接口
  */

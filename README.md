@@ -12,19 +12,13 @@
 ## tech stack
 
 ```
-    "axios": "^0.17.1",
-    "babel-runtime": "^6.26.0",
-    "better-scroll": "^1.5.4",
-    "create-keyframe-animation": "^0.1.0",
-    "fastclick": "^1.0.6",
-    "good-storage": "^1.0.1",
-    "js-base64": "^2.4.0",
-    "jsonp": "^0.2.1",
-    "lyric-parser": "^1.0.1",
-    "vue": "^2.5.2",
-    "vue-lazyload": "^1.1.4",
-    "vue-router": "^3.0.1",
-    "vuex": "^3.0.1"
+vue2.5
+vuex
+qs
+got
+axios
+koa
+jsonp
 ```
 
 ## capture
@@ -36,14 +30,12 @@ Player Show:
 
 ### 配置
 
-- 为了不占用重复的端口
-- 端口设置目前为 `mobile_music` : `7990`
-- 端口设置目前为 `web_music` : `7991`
+- 此项目的接口为开发接口 统一采用 `jsonp` 跨域接收信息，所以请设置 config.js 文件中的域名 前缀 
 - 端口设置目前为 `server_api` : `7992`
 
 ### 安装
 
-可以参考根目录的 `.gitlab-ci.yml` 文件
+可以参考根目录的 `.gitlab-ci.yml` 文件 或者 `.travis.yml`
 
 ```bash
 # 首先是需要启动api转发服务的，不然本地调试会不成功

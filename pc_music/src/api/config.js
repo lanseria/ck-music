@@ -1,3 +1,4 @@
+const prefix = require('../../../config')
 export const commonParams = {
   g_tk: 5381,
   inCharset: 'utf8',
@@ -10,6 +11,6 @@ export const options = {
   param: 'callback'
 }
 
-export const baseUrl = process.env.NODE_ENV === 'development' ? '//localhost:7992' : '//api.limonplayer.cn/jsonp/music'
+export const baseUrl = process.env.NODE_ENV === 'development' ? `//localhost:7992${prefix}` : `//api.limonplayer.cn${prefix}`
 
 export const ERR_OK = 0
