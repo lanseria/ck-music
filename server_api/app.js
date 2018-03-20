@@ -7,8 +7,6 @@ const app = new Koa()
 app.use(jsonp())
 app.use(router.routes()).use(router.allowedMethods())
 
-exports = module.exports = app
-
-app.listen(port, function() {
+module.exports = app.listen(port, function () {
   console.log(`app is listening at port ${port}\nQQ音乐API转发服务已开启`)
 })
