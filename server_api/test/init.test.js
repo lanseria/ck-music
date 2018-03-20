@@ -6,7 +6,7 @@ const expect = require('chai').expect
 const supertest = require('supertest')
 const request = supertest(app)
 
-const timeoutSet = 15000
+const timeoutSet = 150000
 
 describe('pc 页接口', () => {
   it('/getPlaylist-首页推荐页接口测试', function (done) {
