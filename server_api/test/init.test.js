@@ -1,40 +1,112 @@
-var app = require('../app')
-var expect = require('chai').expect
-var supertest = require('supertest')
-var request = supertest(app)
+const app = require('../app')
+const { jsonpMethod2, jsonpMethod1 } = require('./utils')
+const config = require('./config')
+const expect = require('chai').expect
+const supertest = require('supertest')
+const request = supertest(app)
 
-describe('最初API转发接口测试', function () {
-  it('/getDiscList接口测试', function (done) {
-    this.timeout(15000);
-    request
-    .get('/getDiscList')
-    .query({
-      g_tk: 5381,
-      inCharset: 'utf8',
-      outCharset: 'utf-8',
-      notice: 0,
-      format: 'json',
-      platform: 'yqq',
-      sin: 0,
-      ein: 29,
-      sortId: 5,
-      needNewCode: 0,
-      categoryId: 10000000,
-      rnd: 0.44892048645947713,
-      jsonpCallback: '__jp1'
+const timeoutSet = 15000
+
+describe('pc 页接口', () => {
+  it('/getPlaylist-首页推荐页接口测试', function (done) {
+    this.timeout(timeoutSet);
+    request.get('/getPlaylist').query(config.getPlaylist)
+    .expect(200).end((err, res) => {
+      const ret = jsonpMethod2(err, res)
+      expect(ret.code).to.equal(0)
+      done()
     })
-    .expect(200)
-    .end((err, res) => {
-      if (err) {
-        return done(err)
-      }
-      var ret = res.text
-      var reg = /^\w+\(({[^]+})\)$/
-      var matches = ret.match(reg)
-      if (matches) {
-        ret = JSON.parse(matches[1])
-        expect(ret.code).to.equal(0)
-      }
+  })
+})
+
+describe('mobile 页接口', function () {
+  it('/getDiscList-首页加载推荐列表接口测试', function (done) {
+    this.timeout(timeoutSet);
+    request.get('/getDiscList').query(config.getDiscList)
+    .expect(200).end((err, res) => {
+      const ret = jsonpMethod2(err, res)
+      expect(ret.code).to.equal(0)
+      done()
+    })
+  })
+  it('/getRecomList-首页上面广告加载接口测试', function (done) {
+    this.timeout(timeoutSet);
+    request.get('/getRecomList').query(config.getRecomList)
+    .expect(200).end((err, res) => {
+      const ret = jsonpMethod2(err, res)
+      expect(ret.code).to.equal(0)
+      done()
+    })
+  })
+  it('/getHotSingers-获取热门歌手接口测试', function (done) {
+    this.timeout(timeoutSet);
+    request.get('/getHotSingers').query(config.getHotSingers)
+    .expect(200).end((err, res) => {
+      const ret = jsonpMethod2(err, res)
+      expect(ret.code).to.equal(0)
+      done()
+    })
+  })
+  it('/getDiscSongs-获取推荐歌单中歌曲接口测试', function (done) {
+    this.timeout(timeoutSet);
+    request.get('/getDiscSongs').query(config.getDiscSongs)
+    .expect(200).end((err, res) => {
+      const ret = jsonpMethod2(err, res)
+      expect(ret.code).to.equal(0)
+      done()
+    })
+  })
+  it('/getDiscSongs-获取推荐歌单中歌曲接口测试', function (done) {
+    this.timeout(timeoutSet);
+    request.get('/getDiscSongs').query(config.getDiscSongs)
+    .expect(200).end((err, res) => {
+      const ret = jsonpMethod2(err, res)
+      expect(ret.code).to.equal(0)
+      done()
+    })
+  })
+  it('/getSingerSongs-获取歌手歌曲接口测试', function (done) {
+    this.timeout(timeoutSet);
+    request.get('/getSingerSongs').query(config.getSingerSongs)
+    .expect(200).end((err, res) => {
+      const ret = jsonpMethod2(err, res)
+      expect(ret.code).to.equal(0)
+      done()
+    })
+  })
+  it('/getTopList-获取榜单列表接口测试', function (done) {
+    this.timeout(timeoutSet);
+    request.get('/getTopList').query(config.getTopList)
+    .expect(200).end((err, res) => {
+      const ret = jsonpMethod2(err, res)
+      expect(ret.code).to.equal(0)
+      done()
+    })
+  })
+  it('/getTopListSongs-获取榜单歌曲列表接口测试', function (done) {
+    this.timeout(timeoutSet);
+    request.get('/getTopListSongs').query(config.getTopListSongs)
+    .expect(200).end((err, res) => {
+      const ret = jsonpMethod2(err, res)
+      expect(ret.code).to.equal(0)
+      done()
+    })
+  })
+  it('/getHotKey-获取热门搜索词接口测试', function (done) {
+    this.timeout(timeoutSet);
+    request.get('/getHotKey').query(config.getHotKey)
+    .expect(200).end((err, res) => {
+      const ret = jsonpMethod2(err, res)
+      expect(ret.code).to.equal(0)
+      done()
+    })
+  })
+  it('/lyric-获取歌词接口测试', function (done) {
+    this.timeout(timeoutSet);
+    request.get('/lyric').query(config.lyric)
+    .expect(200).end((err, res) => {
+      const ret = jsonpMethod2(err, res)
+      expect(ret.code).to.equal(0)
       done()
     })
   })

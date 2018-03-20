@@ -2,11 +2,11 @@ const got = require('got')
 /**
  * Method 1 convert jsonp() to json
  */
-exports.convertJsonp = async function (request, url) {
+exports.convertJsonp = async function (request, url, refer) {
   const response = await got.get(url, {
     headers: {
-      referer: 'https://c.y.qq.com/',
-      host: 'c.y.qq.com'
+      referer: refer ? `https://${refer}/` : 'https://c.y.qq.com/',
+      host: refer ? refer : 'c.y.qq.com'
     },
     query: request.query
   })
@@ -23,11 +23,11 @@ exports.convertJsonp = async function (request, url) {
 /**
  * Methods 2 ToFix Json Data Format error
  */
-exports.FixJsonp = async function (request, url) {
+exports.FixJsonp = async function (request, url, refer) {
   const response = await got.get(url, {
     headers: {
-      referer: 'https://c.y.qq.com/',
-      host: 'c.y.qq.com'
+      referer: refer ? `https://${refer}/` : 'https://c.y.qq.com/',
+      host: refer ? refer : 'c.y.qq.com'
     },
     query: request.query
   })

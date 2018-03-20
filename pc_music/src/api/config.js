@@ -7,7 +7,7 @@ export const commonParams = {
 }
 
 export const options = {
-  param: 'jsonpCallback'
+  param: 'callback'
 }
 
 export const baseUrl = process.env.NODE_ENV === 'development' ? '//localhost:7992' : '//api.limonplayer.cn/jsonp/music'

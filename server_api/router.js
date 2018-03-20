@@ -2,7 +2,6 @@ const Router = require('koa-router')
 const pcController = require('./controller/pc')
 const mobileController = require('./controller/mobile')
 const router = new Router()
-console.log(pcController.getPlaylist)
 /**
  * pc 页通用获取歌单接口
  */
